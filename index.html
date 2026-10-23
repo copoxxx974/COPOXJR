@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>COPOXJR — iOS App Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C</span><span>COPOXJR</span></a>
+    <nav><a class="active" href="#apps">Apps</a><a href="#games">Games</a><a href="#tools">Tools</a></nav>
+    <button class="admin-open" id="openAdmin">Admin</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">THE iOS APP LIBRARY</div>
+        <h1>Discover apps.<br><span>Make iPhone yours.</span></h1>
+        <p>Explore apps, games, and tools in one clean place.</p>
+        <a class="primary" href="#apps">Explore library <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="phone"><div class="phone-island"></div><div class="app-icon icon-a">✦</div><div class="app-icon icon-b">◈</div><div class="app-icon icon-c">⌘</div><div class="app-icon icon-d">✳</div></div>
+      </div>
+    </section>
+
+    <section class="section-head" id="apps">
+      <div><div class="eyebrow">CURATED FOR YOU</div><h2>Explore the library</h2></div>
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search apps and games…"></label>
+    </section>
+    <div class="filters" id="filters">
+      <button class="filter active" data-category="All">All</button>
+      <button class="filter" data-category="Apps">Apps</button>
+      <button class="filter" data-category="Games">Games</button>
+      <button class="filter" data-category="Jailbreak">Jailbreak</button>
+      <button class="filter" data-category="Tools">Tools</button>
+    </div>
+    <section class="app-grid" id="appGrid"></section>
+    <section class="notice">
+      <strong>Before you download</strong>
+      <p>Only download IPA files you trust and are authorized to use. This starter website does not sign apps or bypass iOS security.</p>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> COPOXJR</span><span>Made for iOS enthusiasts</span></footer>
+
+  <div class="modal hidden" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+    <div class="modal-card">
+      <button class="close" id="closeAdmin" aria-label="Close">×</button>
+      <div class="eyebrow">SITE MANAGEMENT</div>
+      <h2 id="adminTitle">Admin panel</h2>
+      <p class="warning">Prototype only: this demo has no secure login or server storage. Changes are saved only in this browser. Do not publish sensitive credentials here.</p>
+      <form id="appForm">
+        <label>App name<input id="appName" required maxlength="70" placeholder="Example: My iOS App"></label>
+        <div class="form-row">
+          <label>Category<select id="appCategory"><option>Apps</option><option>Games</option><option>Jailbreak</option><option>Tools</option></select></label>
+          <label>Version<input id="appVersion" maxlength="20" placeholder="1.0.0"></label>
+        </div>
+        <label>Short description<input id="appDescription" required maxlength="180" placeholder="What does this app do?"></label>
+        <label>IPA download URL<input id="appUrl" type="url" placeholder="https://…/app.ipa"></label>
+        <label>App icon image URL (optional)<input id="appIcon" type="url" placeholder="https://…/icon.png"></label>
+        <button class="primary full" type="submit">Add app to this browser</button>
+      </form>
+      <div class="admin-list"><h3>Manage demo apps</h3><div id="adminList"></div></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
